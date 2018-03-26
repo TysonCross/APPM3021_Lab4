@@ -1,9 +1,7 @@
 % APPM3021 Lab 4 Exercise 1
 % Tyson Cross 1239448
 
-clc
-clear all
-format short g
+clc; clear all;
 format compact
 rng('shuffle');
 
@@ -14,7 +12,7 @@ f(a) = 1/3*a.^4 + 2*a.^3 - 5*sin(2*a) + exp(-a/2) - 12;
 x = sort(unifrnd(0,5,N,1))
 y = double(f(x))
 
-[co, T] = NewtonInterp(x,y)
+[co, T] = NewtonInterpSimple(x,y)
 
 % output
 
