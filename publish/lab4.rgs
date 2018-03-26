@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <stylesheet_registry xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-   <stylesheet id="lab2" transformtype="fo"><!--03 Mar 2018 1:06:23 PM-->
-      <name>Lab 2</name>
+   <stylesheet id="lab4" transformtype="fo"><!--27 Mar 2018 12:21:19 AM-->
+      <name>Lab 4</name>
       <description>Minimizes white space to reduce page count</description>
       <filename>$approot/sys/namespace/docbook/v4/xsl/fo/docbook_rptgen.xsl</filename>
       <xsl_code>

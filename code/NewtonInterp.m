@@ -1,12 +1,12 @@
  function yq = NewtonInterp(x,y,xq)
-% NewtonInterp() perorms Newton-Gregory divided difference interpolation,
+% NewtonInterp() performs Newton-Gregory divided difference interpolation,
 % using the column vector values for x and y, and query point xq
 % Output is a row vectorcontaining the interpolated y values
 
     % x entries are the x values
     % y entries are value at f(x)
     % xq values are the queries for interpolation
-	% yq values is the resulting interpolated y values
+    % yq values is the resulting interpolated y values
 
 
     [n m] = size(x); % m is the number of data points

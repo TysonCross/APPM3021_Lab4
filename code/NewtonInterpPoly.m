@@ -1,5 +1,5 @@
 function poly = NewtonInterpPoly(x,y,xq)
-% NewtonInterpPoly() perorms Newton-Gregory divided difference interpolation,
+% NewtonInterpPoly() performs Newton-Gregory divided difference interpolation,
 % using the column vector values for x and y, and query point xq
 % Output is a polynomial function of degree n-1 where n is the length of
 % the x values

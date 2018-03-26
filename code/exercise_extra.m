@@ -2,7 +2,7 @@
 % Tyson Cross 1239448
 
 clc; clear all;
-format compact
+format loose
 rng('shuffle');
 
 %% Calculations
@@ -13,6 +13,15 @@ x = sort(unifrnd(0,5,N,1));
 y = double(f(x));
 xq = sort(unifrnd(0,5,round(N/2),1));
 poly = NewtonInterpPoly(x,y,xq);
+
+% Display results
+T1 = table (x, y);
+T1.Properties.VariableNames = {'X','Y'};
+disp(T1)
+disp(' ')
+disp(['XQ:', mat2str(round(xq',4))]);
+disp(' ')
+
 
 %% Display setting and output setup
 scr = get(groot,'ScreenSize');                              % screen resolution

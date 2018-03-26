@@ -1,5 +1,5 @@
  function [co,T] = NewtonInterpSimple(x,y)
-% NewtonInterpSimple() perorms Newton-Gregory divided difference interpolation,
+% NewtonInterpSimple() performs Newton-Gregory divided difference interpolation,
 % using the column vector values for x and y, and returns a row vector
 % containing the polynomial coefficient values in 'co' and the table of
 % differences in matrix T
