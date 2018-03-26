@@ -15,13 +15,15 @@ xq = sort(unifrnd(0,5,round(N/2),1));
 yq = NewtonInterp(x,y,xq);
 
 % Display results
-T1 = table (x, y);
-T1.Properties.VariableNames = {'X','Y'};
-disp(T1)
-disp(' ')
-T2 = table (xq, yq);
-T2.Properties.VariableNames = {'XQ','YQ'};
-disp(T2)
+fprintf('% 8s % 8s    |% 8s % 8s \n','X','Y','XQ','YQ')
+fprintf('_____________________________________________ \n\n')
+for i=1:length(x)
+    if i <= length(xq)
+        fprintf(' % 8.2f % 8.2f   |  % 7.2f % 8.2f \n',x(i),y(i),xq(i),yq(i))
+    else
+        fprintf(' % 8.2f % 8.2f   | \n',x(i),y(i))
+    end
+end
 
 %% Display setting and output setup
 scr = get(groot,'ScreenSize');                              % screen resolution

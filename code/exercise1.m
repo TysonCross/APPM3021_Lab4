@@ -13,12 +13,14 @@ y = double(f(x));
 [co, T] = NewtonInterpSimple(x,y);
 
 % Display results
-T = table (x, y);
-T.Properties.VariableNames = {'X','Y'};
-disp(T)
+fprintf('% 8s % 8s \n','X','Y')
+fprintf('______________________ \n\n')
+for i=1:length(x)
+	fprintf(' % 8.2f % 8.2f\n',x(i),y(i))
+end
 
 % Polynomial output
-fprintf('P(x) = ')
+fprintf('\nP(x) = ')
 for i=1:length(co)
     fprintf('%.3f',co(i));
     if i ~=1  
