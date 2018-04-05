@@ -1,27 +1,26 @@
-% APPM3021 Lab 4 Exercise 3
+% APPM3021 Lab 4 Question 1_2
 % Tyson Cross 1239448
 
 clc; clear all;
 format loose
 rng('shuffle');
 
-%% Calculations
-N = 20;
-syms f a;
-f = @(a) 1/3*a.^4 + 2*a.^3 - 5*sin(2*a) + exp(-a/2) - 12;
-x = sort(unifrnd(0,5,N,1));
-y = double(f(x));
-xq = sort(unifrnd(0,5,round(N/2),1));
-yq = NewtonInterp(x,y,xq);
+R = [1101.0;911.3;636.0;451.1;233.5];
+T = [25.113;30.131;40.120;50.128;60.136];
+
+Rq = [1050.1;901.56;875.11;545.27;333.1;200];
+
+[co, Table] = NewtonInterpSimple(R,T);
+Tq = NewtonInterp(R,T,Rq);
 
 % Display results
-fprintf('% 8s % 8s    |% 8s % 8s \n','X','Y','XQ','YQ')
+fprintf('% 8s % 8s    |% 8s % 8s \n','R(ohm)','Temp(°C)','Rq','Tq')
 fprintf('_____________________________________________ \n\n')
-for i=1:length(x)
-    if i <= length(xq)
-        fprintf(' % 8.2f % 8.2f   |  % 7.2f % 8.2f \n',x(i),y(i),xq(i),yq(i))
+for i=1:length(T)
+    if i <= length(Rq)
+        fprintf(' % 8.2f % 8.2f   |  % 7.2f % 8.2f \n',R(i),T(i),Rq(i),Tq(i))
     else
-        fprintf(' % 8.2f % 8.2f   | \n',x(i),y(i))
+        fprintf(' % 8.2f % 8.2f   | \n',T(i),T(i))
     end
 end
 
@@ -42,12 +41,17 @@ set(groot,'FixedWidthFontName', 'ElroNet Monospace')
 
 % Draw plots
 
-p1 = plot(x,y,...
+p1 = plot(T,R,...
+    'DisplayName','R vs T',...
     'Color',[0.9 0.18 0.18 .6],...                 
 	'LineStyle','-',...
-	'LineWidth',1);
+	'LineWidth',1,...
+    'MarkerSize',6,...
+	'MarkerFaceColor',[0.18 0.9 0.18],...
+    'Marker','+');
 hold on
-p2 = plot(xq,yq,...
+p2 = plot(Tq,Rq,...
+	'DisplayName','Rq vs Tq (interpolated values)',...
     'Color',[0.18 0.9 0.18 .6],...                 
 	'LineStyle',':',...
 	'LineWidth',2,...
@@ -71,9 +75,10 @@ xlabel('x \rightarrow',...
     'FontName',fontName,...
     'FontSize',14);
 % Legend
-legend1 = legend({'x vs y','xq vs yq (interpolated values)'},...
+legend1 = legend(ax1,'show');
+set(legend1,...
      'Location','best',...
-     'Position',[0.19 0.7 0.2 0.09],...
+     'Position',[0.602162162162162 0.788098918083462 0.2 0.09],...
      'Box','on');
 hold on
 

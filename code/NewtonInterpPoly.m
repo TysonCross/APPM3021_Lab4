@@ -39,8 +39,5 @@ function poly = NewtonInterpPoly(x,y,xq)
 end
 
 
- 
-
-
 
 
