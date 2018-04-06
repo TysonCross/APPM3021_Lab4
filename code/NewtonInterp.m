@@ -8,8 +8,7 @@
     % xq values are the queries for interpolation
     % yq values is the resulting interpolated y values
 
-
-    [n m] = size(x); % m is the number of data points
+    [n ~] = size(x); % m is the number of data points
     T = zeros(n, n);
     T(:,1) = double(y)';
     for j=2:n
@@ -37,11 +36,4 @@
         end
         yq(k) = sum;
     end
-end
-
-
- 
-
-
-
-
+ end
