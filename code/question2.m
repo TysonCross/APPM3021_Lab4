@@ -1,7 +1,7 @@
 % APPM3021 Lab 4 Question 2
 % Tyson Cross 1239448
 
-clc; clear all; warning off; set(0,'ShowHiddenHandles','on'); delete(get(0,'Children'));
+clc; clear all;
 format loose
 rng('shuffle');
 
@@ -19,16 +19,11 @@ for i=1:numel(N)
 end
 
 for i=1:numel(N)
-    disp(['i = ',num2str(i)]);
     k=1;
     for j=1:numel(x{:,i})-1
-        disp(['j = ',num2str(j)]);
         while k<numel(xq) && xq(k)>=x{:,i}(j) && xq(k)<=x{:,i}(j+1)
-            disp(['Evaluating x{:,',num2str(i),'}(',num2str(j),') between ', num2str(x{:,i}(j)),' and ', num2str(x{:,i}(j+1))])
-            disp(['xq(',num2str(k),') is ',num2str(xq(k))])
-            current_diff = abs(max(abs(y{:,i}(j)))-max(abs(yq{:,i}(k))))
+            current_diff = abs(max(abs(y{:,i}(j)))-max(abs(yq{:,i}(k))));
             if current_diff > max_diff(i);
-                disp('New max diff')
                 max_diff(i) = current_diff;
             end
             k=k+1;
@@ -52,7 +47,7 @@ offset = [ scr(3)/4 scr(4)/4];
 fig1 =  figure('Position',...                               % draw figure
         [offset(1) offset(2) scr(3)*ratio scr(4)*ratio]);
 set(fig1,'numbertitle','off',...                            % Give figure useful title
-        'name','Runge function vs. interplolated values',...
+        'name','Question 2',...
         'Color','white');
 fontName='Helvetica';
 set(0,'defaultAxesFontName', fontName);                     % Make fonts pretty

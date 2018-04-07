@@ -34,7 +34,7 @@ offset = [ scr(3)/4 scr(4)/4];
 fig1 =  figure('Position',...                               % draw figure
         [offset(1) offset(2) scr(3)*ratio scr(4)*ratio]);
 set(fig1,'numbertitle','off',...                            % Give figure useful title
-        'name','Newton-Gregory Divided Difference Polynomial Interpolation',...
+        'name','Extra Exercise',...
         'Color','white');
 fontName='Helvetica';
 set(0,'defaultAxesFontName', fontName);                     % Make fonts pretty
