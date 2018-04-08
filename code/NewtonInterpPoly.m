@@ -23,11 +23,11 @@ function poly = NewtonInterpPoly(x,y,xq)
     
     for i=1:length(co)
     if i ==1
-        str = strcat('@(b)',num2str(co(i)));
+        str = strcat('@(b)',num2str(co(i),64));
     else
         str = strcat(str,num2str(co(i)));
         for j=1:i-1
-            str = strcat(str,'.*(b-',num2str(x(j)),')');
+            str = strcat(str,'.*(b-',num2str(x(j),64),')');
         end
     end
     if i~=length(co)

@@ -25,7 +25,7 @@ for i=1:length(co)
     fprintf('%.3f',co(i));
     if i ~=1  
         for j=1:i-1
-            fprintf('(x-%.2f)',x(j));
+            fprintf('(x-%.4f)',x(j));
         end
     end
     

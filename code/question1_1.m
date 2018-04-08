@@ -3,6 +3,7 @@
 
 clc; clear all;
 format loose
+format long
 rng('shuffle');
 
 
@@ -21,7 +22,7 @@ end
 
 disp(' ')
 disp('Table of divided difference')
-disp(T)
+disp(Table)
 disp(' ')
 disp('Newton''s polynomial coeffients:')
 disp(co)
@@ -30,7 +31,7 @@ disp(co)
 % Polynomial output
 fprintf('\n%dth order polynomial P(x) = ',numel(R))
 for i=1:length(co)
-    fprintf('%.3f',co(i));
+    fprintf('%.d',co(i));
     if i ~=1  
         for j=1:i-1
             fprintf('(x-%.2f)',R(j));

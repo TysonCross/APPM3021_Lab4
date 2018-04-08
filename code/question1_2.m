@@ -3,6 +3,7 @@
 
 clc; clear all;
 format loose
+format long
 rng('shuffle');
 
 R = [1101.0;911.3;636.0;451.1;233.5];
@@ -14,7 +15,7 @@ Rq = [1050.1;901.56;875.11;545.27;333.1;200];
 Tq = NewtonInterp(R,T,Rq);
 
 % Display results
-fprintf('% 8s % 8s    |% 8s % 8s \n','R(ohm)','Temp(°C)','Rq','Tq')
+fprintf('% 8s % 8s    |% 8s % 8s \n','R(ohm)','T(°C)','Rq','Tq')
 fprintf('_____________________________________________ \n\n')
 for i=1:length(T)
     if i <= length(Rq)
